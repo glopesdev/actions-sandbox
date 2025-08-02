@@ -28,4 +28,4 @@ jobs:
             - name: Print version
               run: dotnet tool run bonsai.sgen --version
             - name: Run bonsai.sgen
-              run: dotnet tool run bonsai.sgen DataSchemas/aind_behavior_vr_foraging.json
+              run: dotnet tool run bonsai.sgen ${{ github.workspace }}/DataSchemas/aind_behavior_vr_foraging.json
