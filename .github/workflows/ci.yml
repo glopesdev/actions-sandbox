@@ -1,0 +1,26 @@
+name: CI
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest]
+        
+        steps:
+            - uses: actions/checkout@v4
+            
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: '8.x'
+            
+            - name: Restore tools
+              run: dotnet tool restore
+            
+            - name: Run bonsai.sgen
+              run: dotnet tool run bonsai.sgen DataSchemas/aind_behavior_vr_foraging.json
