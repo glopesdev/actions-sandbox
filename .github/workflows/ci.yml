@@ -28,4 +28,4 @@ jobs:
             - name: Print version
               run: dotnet tool run bonsai.sgen --version
             - name: Run bonsai.sgen
-              run: dotnet tool run bonsai.sgen schema.json
+              run: dotnet tool run bonsai.sgen ./schema.json
