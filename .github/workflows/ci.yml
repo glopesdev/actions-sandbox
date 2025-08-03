@@ -24,6 +24,9 @@ jobs:
             
             - name: Print tools available
               run: dotnet tool list --local
+
+            - name: Redirection test
+              run: dotnet run --project TestTool/TestTool.csproj
             
             - name: Print version
               run: dotnet bonsai.sgen --version
